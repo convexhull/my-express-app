@@ -9,6 +9,9 @@ hbs.registerPartials('./views/partials');
 hbs.registerHelper('getCurrentYear', () => new Date().getFullYear());
 hbs.registerHelper('screamIt', (x) => x.toUpperCase() );
 
+const port = process.env.PORT || 3000;
+
+
 
 // app.use( (req,res,next) => {
 //     res.send('<h2>Server is down for maintainance. Come back later</h2>');
@@ -54,6 +57,6 @@ app.get('/bad', (req,res) => {
     })
 })
 
-app.listen(3000 , () => {
-    console.log('Server is up and running on Port 3000');
+app.listen(port , () => {
+    console.log(`Server is up and running on Port ${port}`);
 });
